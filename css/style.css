@@ -1,9 +1,11 @@
+/* ====== Estilos Globais ====== */
 body {
     font-family: Arial, sans-serif;
     margin: 20px;
     background-color: #f9f9f9;
 }
 
+/* ====== Navegação ====== */
 header {
     background: #333;
     padding: 10px;
@@ -27,30 +29,117 @@ header a:hover {
     color: yellow;
 }
 
+/* ====== Títulos e Textos ====== */
 h1 {
     color: #333;
-}
-
-table {
-    border-collapse: collapse;
-    width: 100%;
+    text-align: center;
     margin-top: 20px;
 }
 
-table, th, td {
-    border: 1px solid #ccc;
-    padding: 10px;
+h2 {
+    color: #444;
     text-align: center;
+    margin-top: 15px;
 }
 
+p {
+    font-size: 16px;
+    color: #666;
+    text-align: center;
+    margin: 10px 0;
+}
+
+li {
+    color: #333;
+    margin: 5px 0;
+}
+
+/* ====== Imagens ====== */
+img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* ====== Formulários ====== */
 form {
     max-width: 400px;
     margin-top: 20px;
 }
 
-form input, form textarea, form button {
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+form input, 
+form textarea, 
+form button {
     width: 100%;
     padding: 8px;
     margin-top: 5px;
     box-sizing: border-box;
+}
+
+textarea {
+    height: 80px;
+    resize: none;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+/* ====== Tabelas ====== */
+#tabela-tarefas {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+    border: 2px solid #007bff;
+    background-color: #fff;
+}
+
+#tabela-tarefas th, 
+#tabela-tarefas td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+#tabela-tarefas th {
+    background-color: #007bff;
+    color: white;
+}
+
+/* ====== Classes Extras ====== */
+.titulo-secundario {
+    color: #555;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.botao-principal {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.botao-principal:hover {
+    background-color: #0056b3;
 }
