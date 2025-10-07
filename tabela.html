@@ -3,7 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <title>Tabela de Tarefas</title>
-    <link rel="stylesheet" href="css/style.css">
+    <style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f9f9f9;
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+}
+
+header a {
+    text-decoration: none;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #333;
+    padding: 10px;
+    text-align: center; /* centraliza horizontal */
+    vertical-align: middle; /* centraliza vertical */
+}
+
+th {
+    background-color: #333;
+    color: white;
+}
+
+td img {
+    width: 50px;          /* tamanho da imagem */
+    height: 50px;         /* tamanho da imagem */
+    object-fit: cover;    /* mantém proporção, corta se necessário */
+    border-radius: 50%;   /* imagem redonda */
+    display: block;       /* remove espaçamento extra em algumas células */
+    margin: 0 auto;       /* centraliza horizontalmente */
+}
+
+    </style>
 </head>
 <body>
     <header>
@@ -19,7 +69,7 @@
 
     <main>
         <h1>Tabela de Tarefas</h1>
-        <table border="1">
+        <table>
             <thead>
                 <tr>
                     <th>Imagem</th>
@@ -30,31 +80,31 @@
             </thead>
             <tbody>
                 <tr>
-                    <td><img src="https://via.placeholder.com/50" alt="Tarefa 1"></td>
+                    <td><img src="img/img1.jpg" alt="Tarefa 1"></td>
                     <td>Comprar materiais</td>
                     <td>Ir ao mercado comprar materiais de papelaria</td>
                     <td>Pendente</td>
                 </tr>
                 <tr>
-                    <td><img src="https://via.placeholder.com/50" alt="Tarefa 2"></td>
+                    <td><img src="img/img2.jpg" alt="Tarefa 2"></td>
                     <td>Estudar HTML</td>
                     <td>Praticar tags básicas</td>
                     <td>Concluído</td>
                 </tr>
                 <tr>
-                    <td><img src="https://via.placeholder.com/50" alt="Tarefa 3"></td>
+                    <td><img src="img/img3.jpg" alt="Tarefa 3"></td>
                     <td>Fazer exercícios</td>
                     <td>30 minutos de caminhada</td>
                     <td>Pendente</td>
                 </tr>
                 <tr>
-                    <td><img src="https://via.placeholder.com/50" alt="Tarefa 4"></td>
+                    <td><img src="img/img4.jpg" alt="Tarefa 4"></td>
                     <td>Ler livro</td>
                     <td>Capítulo 5 de lógica de programação</td>
                     <td>Em andamento</td>
                 </tr>
                 <tr>
-                    <td><img src="https://via.placeholder.com/50" alt="Tarefa 5"></td>
+                    <td><img src="img/img5.png" alt="Tarefa 5"></td>
                     <td>Organizar agenda</td>
                     <td>Montar cronograma de estudos</td>
                     <td>Pendente</td>
