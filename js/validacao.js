@@ -6,6 +6,7 @@
   const cpf = document.getElementById('cpf');
   const erroEmail = document.getElementById('erro-email');
   const erroCpf = document.getElementById('erro-cpf');
+  const sucesso = document.getElementById('sucesso'); // Mensagem de sucesso
 
   const emailRegex = /^[a-z]+\.[a-z]+@net\.com$/; // exigido pelo professor
   const cpfRegex = /^\d{3}\.\d{3}\.\d{3}-\d{2}$/;
@@ -14,7 +15,9 @@
   function hide(el){ el.textContent=''; el.style.display='none'; }
 
   form.addEventListener('submit', function(e){
+    e.preventDefault(); // evita reload
     let ok = true;
+
     hide(erroEmail); hide(erroCpf);
 
     if(!emailRegex.test(email.value.trim())){
@@ -25,7 +28,20 @@
       show(erroCpf, 'Use o formato 999.999.999-99');
       ok = false;
     }
-    if(!ok){ e.preventDefault(); }
+
+    if(!ok) return;
+
+    // ✅ Exibe mensagem de sucesso animada
+    sucesso.innerHTML = "✅ Mensagem enviada com sucesso!";
+    sucesso.classList.add("show");
+
+    // Oculta após 3 segundos com fade
+    setTimeout(() => {
+      sucesso.classList.remove("show");
+    }, 3000);
+
+    // limpa form
+    form.reset();
   });
 
   // feedback ao digitar
@@ -37,4 +53,5 @@
     if(cpf.value.trim()==='' || cpfRegex.test(cpf.value.trim())) hide(erroCpf);
     else show(erroCpf, 'Formato: 999.999.999-99');
   });
+
 })();

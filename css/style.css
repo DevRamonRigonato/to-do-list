@@ -6,3 +6,19 @@ footer{ text-align:center; padding: 30px; opacity: 0.8; }
 .badge.ok{ background:#eaffea; color:#1c7c1c; }
 .badge.warn{ background:#fff4d6; color:#8a6d1a; }
 .badge.info{ background:#dff1ff; color:#0b4bb6; }
+#sucesso {
+  opacity: 0;
+  transition: opacity .4s ease-in-out;
+  background: #d4ffd4;
+  padding: 10px;
+  border-radius: 6px;
+  text-align: center;
+  color: #0d7a0d;
+  font-weight: 600;
+  margin-top: 12px;
+}
+
+#sucesso.show {
+  opacity: 1;
+}
+
