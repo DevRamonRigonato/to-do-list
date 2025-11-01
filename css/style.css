@@ -1,0 +1,8 @@
+/* Estilos compartilhados mínimos (mantém compat com os temas) */
+*{ box-sizing: border-box; }
+img{ max-width: 100%; display: block; }
+footer{ text-align:center; padding: 30px; opacity: 0.8; }
+.badge{ display:inline-block; padding:4px 10px; border-radius:999px; font-size:12px; }
+.badge.ok{ background:#eaffea; color:#1c7c1c; }
+.badge.warn{ background:#fff4d6; color:#8a6d1a; }
+.badge.info{ background:#dff1ff; color:#0b4bb6; }

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contato / SAC</title>
+  <link id="tema" rel="stylesheet" href="css/tema-claro.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+  <div class="navbar container">
+    <div class="brand">✅ To‑Do List</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tabela.html">Tabela</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        <li><a href="equipe.html">Equipe</a></li>
+      </ul>
+    </nav>
+    <button class="theme-toggle" onclick="alternarTema()" title="Alternar tema">🌓 Tema</button>
+  </div>
+</header>
+
+<main class="container">
+  <div class="card" style="max-width:720px;margin:0 auto;">
+    <h1>Fale Conosco</h1>
+    <form id="formContato" novalidate>
+      <div class="field">
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+      </div>
+
+      <div class="field">
+        <label for="email">E-mail</label>
+        <input type="text" id="email" name="email" placeholder="joao.silva@net.com" required>
+        <div id="erro-email" class="error"></div>
+      </div>
+
+      <div class="field">
+        <label for="cpf">CPF</label>
+        <input type="text" id="cpf" name="cpf" placeholder="999.999.999-99" required>
+        <div id="erro-cpf" class="error"></div>
+      </div>
+
+      <div class="field">
+        <label for="assunto">Assunto</label>
+        <input type="text" id="assunto" name="assunto" placeholder="Qual o assunto?" required>
+      </div>
+
+      <div class="field">
+        <label for="mensagem">Mensagem</label>
+        <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem" required></textarea>
+      </div>
+
+      <button class="primary" type="submit">Enviar</button>
+      <div id="sucesso" class="success" style="display:none; margin-top:15px; font-weight:600;"></div>
+
+    </form>
+  </div>
+</main>
+
+<!-- Importa SOMENTE aqui a validação -->
+<script src="js/validacao.js"></script>
+
+<footer>
+  <div class="container">Feito por Ramon • Projeto Acadêmico To‑Do List</div>
+</footer>
+<script src="js/tema.js"></script>
+</body>
+</html>

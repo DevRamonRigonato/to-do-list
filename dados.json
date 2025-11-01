@@ -1,0 +1,32 @@
+[
+  {
+    "imagem": "img/img1.jpg",
+    "titulo": "Comprar materiais",
+    "descricao": "Ir ao mercado comprar materiais de papelaria",
+    "status": "Pendente"
+  },
+  {
+    "imagem": "img/img2.jpg",
+    "titulo": "Estudar HTML",
+    "descricao": "Praticar tags básicas",
+    "status": "Concluído"
+  },
+  {
+    "imagem": "img/img3.jpg",
+    "titulo": "Fazer exercícios",
+    "descricao": "30 minutos de caminhada",
+    "status": "Pendente"
+  },
+  {
+    "imagem": "img/img4.jpg",
+    "titulo": "Ler livro",
+    "descricao": "Capítulo 5 de lógica de programação",
+    "status": "Em andamento"
+  },
+  {
+    "imagem": "img/img5.png",
+    "titulo": "Organizar agenda",
+    "descricao": "Montar cronograma de estudos",
+    "status": "Pendente"
+  }
+]

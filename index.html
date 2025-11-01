@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Home</title>
+  <link id="tema" rel="stylesheet" href="css/tema-claro.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+  <div class="navbar container">
+    <div class="brand">✅ To‑Do List</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tabela.html">Tabela</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        <li><a href="equipe.html">Equipe</a></li>
+      </ul>
+    </nav>
+    <button class="theme-toggle" onclick="alternarTema()" title="Alternar tema">🌓 Tema</button>
+  </div>
+</header>
+
+<main class="container">
+  <div class="card">
+    <h1>Bem-vindo ao seu To‑Do List</h1>
+    <h2>Gerencie tarefas com tema claro/escuro, validação e dados dinâmicos.</h2>
+    <p>Use o menu acima para navegar entre as páginas:</p>
+    <ul>
+      <li><strong>Tabela</strong>: carrega tarefas dinamicamente do <code>dados.json</code>.</li>
+      <li><strong>Contato</strong>: validação de E-mail (formato exigido) e CPF.</li>
+      <li><strong>Equipe</strong>: página de exemplo.</li>
+    </ul>
+  </div>
+</main>
+
+<footer>
+  <div class="container">Feito por Ramon • Projeto Acadêmico To‑Do List</div>
+</footer>
+<script src="js/tema.js"></script>
+</body>
+</html>
