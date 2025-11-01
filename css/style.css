@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /* Estilos compartilhados mínimos (mantém compat com os temas) */
 *{ box-sizing: border-box; }
 img{ max-width: 100%; display: block; }
@@ -7,7 +6,6 @@ footer{ text-align:center; padding: 30px; opacity: 0.8; }
 .badge.ok{ background:#eaffea; color:#1c7c1c; }
 .badge.warn{ background:#fff4d6; color:#8a6d1a; }
 .badge.info{ background:#dff1ff; color:#0b4bb6; }
-=======
 /* ====== Variáveis Globais ====== */
 :root {
     --cor-fundo: #f9f9f9;
@@ -162,4 +160,4 @@ button:hover, .botao-principal:hover {
     text-align: center;
     margin-top: 10px;
 }
->>>>>>> 85c6df7ff1256d05b1d538fe9b3c67f86ca94e1d
+
