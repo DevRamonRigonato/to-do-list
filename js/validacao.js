@@ -1,5 +1,7 @@
 // js/validacao.js
-// Validação da página de contato: e-mail fixo no formato joao.silva@net.com + CPF 999.999.999-99
+// Validação da página de contato: e-mail no formato nome.sobrenome@net.com (aceita números)
+// e CPF no formato 999.999.999-99
+
 (function(){
   const form = document.getElementById('formContato');
   const email = document.getElementById('email');
@@ -8,20 +10,29 @@
   const erroCpf = document.getElementById('erro-cpf');
   const sucesso = document.getElementById('sucesso'); // Mensagem de sucesso
 
-  const emailRegex = /^[a-z]+\.[a-z]+@net\.com$/; // exigido pelo professor
+  // ✅ Agora permite letras, números, pontos, traços e underlines, mas só @net.com
+  const emailRegex = /^[a-z0-9._-]+@net\.com$/i;
   const cpfRegex = /^\d{3}\.\d{3}\.\d{3}-\d{2}$/;
 
-  function show(el, msg){ el.textContent = msg; el.style.display='block'; }
-  function hide(el){ el.textContent=''; el.style.display='none'; }
+  function show(el, msg){ 
+    el.textContent = msg; 
+    el.style.display = 'block'; 
+  }
+
+  function hide(el){ 
+    el.textContent = ''; 
+    el.style.display = 'none'; 
+  }
 
   form.addEventListener('submit', function(e){
     e.preventDefault(); // evita reload
     let ok = true;
 
-    hide(erroEmail); hide(erroCpf);
+    hide(erroEmail); 
+    hide(erroCpf);
 
     if(!emailRegex.test(email.value.trim())){
-      show(erroEmail, 'Use exatamente o formato joao.silva@net.com');
+      show(erroEmail, 'Use o formato nome.sobrenome@net.com (somente domínio net.com)');
       ok = false;
     }
     if(!cpfRegex.test(cpf.value.trim())){
@@ -47,8 +58,9 @@
   // feedback ao digitar
   email.addEventListener('input', ()=>{
     if(email.value.trim()==='' || emailRegex.test(email.value.trim())) hide(erroEmail);
-    else show(erroEmail, 'Exemplo: joao.silva@net.com');
+    else show(erroEmail, 'Exemplo: nome123.sobrenome@net.com');
   });
+
   cpf.addEventListener('input', ()=>{
     if(cpf.value.trim()==='' || cpfRegex.test(cpf.value.trim())) hide(erroCpf);
     else show(erroCpf, 'Formato: 999.999.999-99');
