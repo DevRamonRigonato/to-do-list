@@ -7,18 +7,21 @@
   <link id="tema" rel="stylesheet" href="css/tema-claro.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 <header>
   <div class="navbar container">
-    <div class="brand">✅ To‑Do List</div>
+    <div class="brand">✅ To-Do List</div>
+
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="tabela.html">Tabela</a></li>
-        <li><a href="contato.html">Contato</a></li>
+        <li><a href="tabela.php">Tabela</a></li>
+        <li><a class="active" href="contato.html">Contato</a></li>
         <li><a href="equipe.html">Equipe</a></li>
       </ul>
     </nav>
+
     <button class="theme-toggle" onclick="alternarTema()" title="Alternar tema">🌓 Tema</button>
   </div>
 </header>
@@ -26,7 +29,9 @@
 <main class="container">
   <div class="card" style="max-width:720px;margin:0 auto;">
     <h1>Fale Conosco</h1>
+
     <form id="formContato" novalidate>
+
       <div class="field">
         <label for="nome">Nome</label>
         <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
@@ -56,18 +61,19 @@
 
       <button class="primary" type="submit">Enviar</button>
 
-      <!-- ✅ Mensagem de sucesso aqui -->
+      <!-- Mensagem de sucesso -->
       <div id="sucesso"></div>
+
     </form>
   </div>
 </main>
 
-<!-- Importa SOMENTE aqui a validação -->
 <script src="js/validacao.js"></script>
 
 <footer>
-  <div class="container">Feito por Ramon • Projeto Acadêmico To‑Do List</div>
+  <div class="container">Feito por Ramon • Projeto Acadêmico To-Do List</div>
 </footer>
+
 <script src="js/tema.js"></script>
 </body>
 </html>
