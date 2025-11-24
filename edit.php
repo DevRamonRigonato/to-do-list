@@ -48,7 +48,8 @@ $task = $result->fetch_assoc();
   <div class="card" style="max-width:700px; margin:0 auto;">
     <h1>Editar Tarefa</h1>
 
-    <form action="update.php" method="POST">
+    <!-- ALTERAÇÃO IMPORTANTE AQUI -->
+    <form action="edit_action.php" method="POST">
       <input type="hidden" name="id" value="<?= $task['id'] ?>">
 
       <div class="field">

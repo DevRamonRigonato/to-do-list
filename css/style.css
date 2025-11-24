@@ -17,20 +17,36 @@ footer {
     opacity: 0.8;
 }
 
+/* =========================================
+   MENSAGEM DE SUCESSO DO FORMULÁRIO CONTATO
+========================================= */
+
 #sucesso {
     opacity: 0;
     transition: opacity .4s ease-in-out;
     background: #d4ffd4;
-    padding: 10px;
-    border-radius: 6px;
+    padding: 12px;
+    border-radius: 8px;
     text-align: center;
     color: #0d7a0d;
     font-weight: 600;
-    margin-top: 12px;
+    margin-top: 15px;
 }
 
 #sucesso.show {
     opacity: 1;
+}
+
+/* =========================================
+   MENSAGENS DE ERRO DO FORMULÁRIO CONTATO
+========================================= */
+
+.error {
+    color: #ff3b3b;
+    font-size: 13px;
+    display: none;
+    margin-top: -10px;
+    margin-bottom: 10px;
 }
 
 /* ============================

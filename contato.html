@@ -32,31 +32,39 @@
 
     <form id="formContato" novalidate>
 
+      <!-- NOME -->
       <div class="field">
         <label for="nome">Nome</label>
         <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+        <div id="erro-nome" class="error"></div>
       </div>
 
+      <!-- EMAIL -->
       <div class="field">
         <label for="email">E-mail</label>
         <input type="text" id="email" name="email" placeholder="joao.silva@net.com" required>
         <div id="erro-email" class="error"></div>
       </div>
 
+      <!-- CPF -->
       <div class="field">
         <label for="cpf">CPF</label>
         <input type="text" id="cpf" name="cpf" placeholder="999.999.999-99" required>
         <div id="erro-cpf" class="error"></div>
       </div>
 
+      <!-- ASSUNTO -->
       <div class="field">
         <label for="assunto">Assunto</label>
         <input type="text" id="assunto" name="assunto" placeholder="Qual o assunto?" required>
+        <div id="erro-assunto" class="error"></div>
       </div>
 
+      <!-- MENSAGEM -->
       <div class="field">
         <label for="mensagem">Mensagem</label>
         <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem" required></textarea>
+        <div id="erro-msg" class="error"></div>
       </div>
 
       <button class="primary" type="submit">Enviar</button>

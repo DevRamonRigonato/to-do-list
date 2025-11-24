@@ -1,69 +1,119 @@
 // js/validacao.js
-// Validação da página de contato: e-mail no formato nome.sobrenome@net.com (aceita números)
-// e CPF no formato 999.999.999-99
+// Validação completa do formulário de contato:
+// - Nome obrigatório
+// - E-mail no formato nome.sobrenome@net.com (aceita números)
+// - CPF no formato 999.999.999-99
+// - Assunto obrigatório
+// - Mensagem obrigatória
 
 (function(){
+
   const form = document.getElementById('formContato');
+
+  const nome = document.getElementById('nome');
   const email = document.getElementById('email');
   const cpf = document.getElementById('cpf');
+  const assunto = document.getElementById('assunto');
+  const mensagem = document.getElementById('mensagem');
+
+  const erroNome = document.getElementById('erro-nome');
   const erroEmail = document.getElementById('erro-email');
   const erroCpf = document.getElementById('erro-cpf');
-  const sucesso = document.getElementById('sucesso'); // Mensagem de sucesso
+  const erroAssunto = document.getElementById('erro-assunto');
+  const erroMsg = document.getElementById('erro-msg');
 
-  // ✅ Agora permite letras, números, pontos, traços e underlines, mas só @net.com
+  const sucesso = document.getElementById('sucesso');
+
+  // Regex
   const emailRegex = /^[a-z0-9._-]+@net\.com$/i;
-  const cpfRegex = /^\d{3}\.\d{3}\.\d{3}-\d{2}$/;
+  const cpfRegex   = /^\d{3}\.\d{3}\.\d{3}-\d{2}$/;
 
-  function show(el, msg){ 
-    el.textContent = msg; 
-    el.style.display = 'block'; 
+  function showError(el, msg){
+    el.textContent = msg;
+    el.style.display = 'block';
   }
 
-  function hide(el){ 
-    el.textContent = ''; 
-    el.style.display = 'none'; 
+  function clearError(el){
+    el.textContent = '';
+    el.style.display = 'none';
   }
 
   form.addEventListener('submit', function(e){
-    e.preventDefault(); // evita reload
+    e.preventDefault(); // evitar reload
+
     let ok = true;
 
-    hide(erroEmail); 
-    hide(erroCpf);
+    // limpar erros
+    clearError(erroNome);
+    clearError(erroEmail);
+    clearError(erroCpf);
+    clearError(erroAssunto);
+    clearError(erroMsg);
 
-    if(!emailRegex.test(email.value.trim())){
-      show(erroEmail, 'Use o formato nome.sobrenome@net.com (somente domínio net.com)');
+    // valida nome
+    if(nome.value.trim() === ''){
+      showError(erroNome, 'Digite seu nome.');
       ok = false;
     }
+
+    // valida e-mail
+    if(!emailRegex.test(email.value.trim())){
+      showError(erroEmail, 'Use o formato nome.sobrenome@net.com');
+      ok = false;
+    }
+
+    // valida CPF
     if(!cpfRegex.test(cpf.value.trim())){
-      show(erroCpf, 'Use o formato 999.999.999-99');
+      showError(erroCpf, 'Formato correto: 999.999.999-99');
+      ok = false;
+    }
+
+    // valida assunto
+    if(assunto.value.trim() === ''){
+      showError(erroAssunto, 'Digite o assunto da mensagem.');
+      ok = false;
+    }
+
+    // valida mensagem
+    if(mensagem.value.trim() === ''){
+      showError(erroMsg, 'Escreva sua mensagem.');
       ok = false;
     }
 
     if(!ok) return;
 
-    // ✅ Exibe mensagem de sucesso animada
+    // Sucesso 👇
     sucesso.innerHTML = "✅ Mensagem enviada com sucesso!";
     sucesso.classList.add("show");
 
-    // Oculta após 3 segundos com fade
     setTimeout(() => {
       sucesso.classList.remove("show");
     }, 3000);
 
-    // limpa form
     form.reset();
   });
 
-  // feedback ao digitar
-  email.addEventListener('input', ()=>{
-    if(email.value.trim()==='' || emailRegex.test(email.value.trim())) hide(erroEmail);
-    else show(erroEmail, 'Exemplo: nome123.sobrenome@net.com');
+  // Feedback dinâmico ao digitar
+  nome.addEventListener('input', () => {
+    if(nome.value.trim() !== '') clearError(erroNome);
   });
 
-  cpf.addEventListener('input', ()=>{
-    if(cpf.value.trim()==='' || cpfRegex.test(cpf.value.trim())) hide(erroCpf);
-    else show(erroCpf, 'Formato: 999.999.999-99');
+  email.addEventListener('input', () => {
+    if(emailRegex.test(email.value.trim()) || email.value.trim() === '')
+      clearError(erroEmail);
+  });
+
+  cpf.addEventListener('input', () => {
+    if(cpfRegex.test(cpf.value.trim()) || cpf.value.trim() === '')
+      clearError(erroCpf);
+  });
+
+  assunto.addEventListener('input', () => {
+    if(assunto.value.trim() !== '') clearError(erroAssunto);
+  });
+
+  mensagem.addEventListener('input', () => {
+    if(mensagem.value.trim() !== '') clearError(erroMsg);
   });
 
 })();
